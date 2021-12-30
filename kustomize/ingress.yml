@@ -9,10 +9,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: 2048.k8s-argocd.tk
+  - host: k8s-argocd.tk
     http:
       paths:
-      - path: /
+      - path: /2048-game/
         pathType: Prefix
         backend:
           service: 
@@ -21,6 +21,6 @@ spec:
               number: 8000
   tls:
   - hosts:
-    - 2048.k8s-argocd.tk
+    - k8s-argocd.tk
     secretName: argocd-app-tls
 

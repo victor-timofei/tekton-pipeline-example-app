@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   dnsNames:
-    - 2048.k8s-argocd.tk
+    - k8s-argocd.tk
   secretName: argocd-app-tls
   issuerRef:
     name: letsencrypt-cluster-issuer
