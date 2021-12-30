@@ -11,3 +11,4 @@ resources:
 - service.yml
 - deployment.yml
 - ingress.yml
+- certificate.yml
