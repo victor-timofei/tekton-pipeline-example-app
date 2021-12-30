@@ -10,4 +10,4 @@ commonLabels:
 resources:
 - service.yml
 - deployment.yml
-- mapping.yml
+- ingress.yml
