@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: 2048-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: k8s-argocd.tk
+    http:
+      paths:
+      - path: /2048-game/
+        pathType: Prefix
+        backend:
+          service: 
+            name: svc-2048
+            port:
+              number: 8000
+  tls:
+  - hosts:
+    - k8s-argocd.tk
+    secretName: argocd-app-tls
+
